@@ -1,0 +1,48 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main # This will trigger the workflow on push to the production branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create .env.local file on server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER: ${{ secrets.SERVER }}
+          USERNAME: ${{ secrets.USERNAME }}
+          ENV_VARS: ${{ secrets.ENV_VARS }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh -o StrictHostKeyChecking=no $USERNAME@$SERVER "echo $ENV_VARS > /var/www/wishgeekstechservenew/.env.local"
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER: ${{ secrets.SERVER }}
+          USERNAME: ${{ secrets.USERNAME }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          # Clear the existing deployment
+          ssh -o StrictHostKeyChecking=no $USERNAME@$SERVER "rm -rf /var/www/wishgeekstechservenew/*"
+          # Copy the new build folder
+          scp -r .next $USERNAME@$SERVER:/var/www/wishgeekstechservenew
+          # Source nvm and run npm start
+          ssh -o StrictHostKeyChecking=no $USERNAME@$SERVER "source ~/.nvm/nvm.sh && cd /var/www/wishgeekstechservenew && npm start"

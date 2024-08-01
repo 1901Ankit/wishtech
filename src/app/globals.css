@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page__title {
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+  line-height: 1.2;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 50px !important;
+}
+
+
+
+.ourr {
+  margin-left: -20px !important;
+}
+
+.prd {
+  padding: 45px 45px;
+  z-index: 999;
+  height: 90%;
+}
+
+.onpatch {
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  display: block;
+  font-family: montserrat, sans-serif !important;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 27.2px;
+}
+
+.let {
+  color: #000;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: montserrat, sans-serif;
+}
+
+.pricing .box {
+  padding: 20px;
+  background: #f6f6f6;
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 25%);
+  /* height: 550px; */
+}
+
+.pricing h3 {
+  font-weight: 400;
+  padding: 20px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #0094d3;
+  margin: 20px -20px 0px -20px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.video-wrapper {
+  height: 100vh;
+  position: relative;
+}
+
+.get-in-touch-box-mobile-container swiper-slide {
+  width: 100% !important;
+  height: 236px !important;
+}
+
+.get-in-touch-box-mobile-container .get-in-touch-box {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+/* Technologies tabs styling */
+.technologies-section swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  background-color: #0094D3;
+}
+
+.tabs button {
+  font-weight: bold;
+  font-size: 1.19rem;
+  padding: 20px 20px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: #0094D3;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.tabs button:hover {
+  background-color: #027db3;
+}
+
+.tabs button.active {
+  background-color: white;
+  color: #0094D3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tabs .left-end-btn.active {
+  background-color: white;
+  color: #0094D3;
+  border-top-left-radius: 0;
+}
+
+.tabs .right-end-btn.active {
+  background-color: white;
+  color: #0094D3;
+  border-top-right-radius: 0;
+}
+
+.tabs-section-mobile {
+  display: flex;
+  width: 100%;
+}
+
+.content {
+  padding: 20px 5%;
+}
+
+.exprers {
+  background: -webkit-linear-gradient(#f7666f, #406aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wishgekshead {
+  background: -webkit-linear-gradient(#1a1616c4, #1a1616c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.titick {
+  background: -webkit-linear-gradient(#2396c6, #1f88b4);
+}
+
+.dynamic-numbers {
+  text-shadow: 0 4px 4px #00000033;
+}
+
+.contact-dialog-box::backdrop {
+  background-image: linear-gradient(45deg,
+      magenta,
+      rebeccapurple,
+      dodgerblue,
+      green);
+  opacity: 0.75;
+}
+
+.contact-dialog-box {
+  position: absolute;
+  top: 80px;
+  left: 66%;
+  width: min-content;
+  z-index: 10;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 25%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact-dialog-box.dialog-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contact-dialog-box.dialog-close {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+input:focus-visible {
+  outline: 0;
+}
+
+.get-in-touch-box-mobile-container {
+  display: none;
+}
+
+
+
+  .serviceProcessBg {
+    background: url("../../public/assets/image/seo/serviceBgImage.png") center center no-repeat;
+    background-size: contain; /* Adjust this value to make the image smaller or larger */
+    background-position: 40% 40%;
+    background-clip: content-box;
+  }
+  
+
+.contact-dialog-box::backdrop {
+  background-image: linear-gradient(45deg,
+      magenta,
+      rebeccapurple,
+      dodgerblue,
+      green);
+  opacity: 0.75;
+}
+
+.contact-dialog-box {
+  position: absolute;
+  top: 80px;
+  left: 66%;
+  width: min-content;
+  z-index: 10;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 25%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact-dialog-box.dialog-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contact-dialog-box.dialog-close {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+input:focus-visible {
+  outline: 0;
+}
+
+.get-in-touch-box-mobile-container {
+  display: none;
+}
+
+
+@media screen and (max-width: 800px) {
+  .tabs-section-mobile {
+    flex-direction: column;
+  }
+
+  .technologies-section swiper-slide img {
+    /* object-fit: cover; */
+    width: auto;
+    height: 100px;
+  }
+
+  .contact-dialog-box {
+    top: -30px;
+    left: 0;
+    width: 90%;
+  }
+
+  .get-in-touch-box-mobile-container {
+    display: block;
+  }
+
+  .desktop-contactDialogBox {
+    display: none;
+  }
+
+}
+
+
+
+
+/* Our Process CSS */
+
